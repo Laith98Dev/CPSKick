@@ -45,7 +45,6 @@ class Main extends PluginBase {
 	
 	public $defualtcps = 30;
 	
-	
 	public function onEnable(){
 		@mkdir($this->getDataFolder());
 		
@@ -61,15 +60,13 @@ class Main extends PluginBase {
 	}
 	
 	public function inItConfig(){
-		$dc = $this->defualtcps;
 		$c = new Config($this->getDataFolder() . "config.yml", Config::YAML. [
-		"MAX_CPS_KICK" => $dc,
+		"MAX_CPS_KICK" => $this->defualtcps,
 		"Reason" => "you got a kick because use auto clicker"
 		]);
 		
 		$cps = $c->get("MAX_CPS_KICK");
 		$reason = $c->get("Reason");
-		
 		if(!is_numeric($cps)){
 			$c->set("MAX_CPS_KICK", $this->defualtcps);
 			$c->save();
@@ -81,7 +78,7 @@ class Main extends PluginBase {
 			}
 			
 			if(empty($reason) or $reason == null){
-				$c->set("Reason", $this->defualtcps);
+				$c->set("Reason", "you got a kick because use auto clicker");
 				$c->save();
 			}
 		}

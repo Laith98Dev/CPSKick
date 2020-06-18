@@ -1,0 +1,7 @@
+# plugin by laithyoutuber
+
+# max cps to kick player
+MAX_CPS_KICK: 30
+
+# reason Displays when player kick 
+Reason: "you got a kick because use auto clicker"

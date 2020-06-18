@@ -61,8 +61,9 @@ class Main extends PluginBase {
 	}
 	
 	public function inItConfig(){
+		$dc = $this->defualtcps;
 		$c = new Config($this->getDataFolder() . "config.yml", Config::YAML. [
-		"MAX_CPS_KICK" => $this->defualtcps,
+		"MAX_CPS_KICK" => $dc,
 		"Reason" => "you got a kick because use auto clicker"
 		]);
 		
